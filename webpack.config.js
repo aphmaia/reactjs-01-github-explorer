@@ -16,6 +16,13 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx']
   },
+  devServer: {
+    //contentBase: path.resolve(__dirname, 'public'),
+    port: 3000,
+    static: {
+      directory: path.resolve(__dirname, "public")
+    },
+  },
   module: {
     rules: [{
       test: /\.jsx$/,
