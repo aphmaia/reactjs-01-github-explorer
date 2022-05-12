@@ -20,7 +20,7 @@ export function RepositoryList(){
   return (
     <section className="m-10">
       <div className="flex items-center mb-4"> 
-        <ListChecks size={30} className="flex-none mr-2 text-[#848fe6]" />
+        <ListChecks size={30} className="flex-none mr-2 text-[#8257e5]" />
         <h1 className="flex-1 text-lg items-center"> Lista de repositórios</h1>
       </div>
 
