@@ -2,9 +2,17 @@ import { useState, useEffect } from 'react';
 import { ListChecks } from 'phosphor-react'
 import { RepositoryItem } from './RepositoryItem' 
 
+interface Repository {
+  id: number;
+  name: string;
+  visibility: string;
+  description: string;
+  html_url: string;
+}
+
 export function RepositoryList(){
 
-  const [ repositories, setRepositories ] = useState([]);
+  const [ repositories, setRepositories ] = useState<Repository[]>([]);
 
   useEffect(() =>{
     fetch('https://api.github.com/orgs/rocketseat/repos')
@@ -14,8 +22,7 @@ export function RepositoryList(){
       })
   }, 
     []
-  );
- 
+  );  
 
   return (
     <section className="m-10">
@@ -27,7 +34,7 @@ export function RepositoryList(){
       <ul className="list-none">
         {
           repositories.map(repository => {
-            return <RepositoryItem key={repository.id} repository={ repository } />;
+            return <RepositoryItem key={repository.id} repository={repository} />;
           })
         }
           
